@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
 
   loginUser() {
     this.authService.login(this.loginForm.value).subscribe((response : boolean) => {
-      this.router.navigate(['/profile/view']);
+      this.router.navigate(['/profile/details']);
     },((err) => {
       this.errState = true;
       this.loginErrorMsg = err.msg;
