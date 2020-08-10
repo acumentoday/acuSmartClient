@@ -1,8 +1,23 @@
 <div class="container-fluid">
-  <div class="row authForm basicColor">
+  <div class="row authForm">
     <div class="col-md-12 col-sm-12 col-xs-12 col-lg-4"></div>
     <div class="col-md-12 col-sm-12 col-xs-12 col-lg-4">
-      <div class="card mb-2">
+      <div class="text-center">
+        <img
+        width="60%"
+        height="150"
+        src="https://wordpress-343816-1412220.cloudwaysapps.com/wp-content/uploads/2020/08/logo-1024x334.png"
+        class="attachment-large size-large"
+        alt=""
+        srcset="
+          https://wordpress-343816-1412220.cloudwaysapps.com/wp-content/uploads/2020/08/logo-1024x334.png 1024w,
+          https://wordpress-343816-1412220.cloudwaysapps.com/wp-content/uploads/2020/08/logo-300x98.png    300w,
+        "
+
+      />
+      </div>
+     
+      <div class="card mb-2 no_border">
         <div class="card-body">
           <form [formGroup]="loginForm" (ngSubmit)="loginUser()">
             <div class="form-group pb-3">
@@ -44,23 +59,23 @@
                 formControlName="password"
               />
               <span
-              class="text-danger pt-2"
-              *ngIf="
-                (loginFormControl.password.touched || submitted) &&
-                loginFormControl.password.errors?.required
-              "
-            >
-              Password is required
-            </span>
-            <span
-              class="text-danger pt-2"
-              *ngIf="
-                loginFormControl.password.touched &&
-                loginForm.controls['password'].hasError('minlength')
-              "
-            >
-              Enter a valid password
-            </span>
+                class="text-danger pt-2"
+                *ngIf="
+                  (loginFormControl.password.touched || submitted) &&
+                  loginFormControl.password.errors?.required
+                "
+              >
+                Password is required
+              </span>
+              <span
+                class="text-danger pt-2"
+                *ngIf="
+                  loginFormControl.password.touched &&
+                  loginForm.controls['password'].hasError('minlength')
+                "
+              >
+                Enter a valid password
+              </span>
             </div>
             <button
               type="submit"
@@ -75,9 +90,19 @@
           </p>
         </div>
       </div>
-      <div class="alert alert-warning alert-dismissible fade show" role="alert" *ngIf="errState">
-        <strong>Hello {{loginForm.value.username}}!</strong> {{loginErrorMsg}}
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <div
+        class="alert alert-warning alert-dismissible fade show"
+        role="alert"
+        *ngIf="errState"
+      >
+        <strong>Hello {{ loginForm.value.username }}!</strong>
+        {{ loginErrorMsg }}
+        <button
+          type="button"
+          class="close"
+          data-dismiss="alert"
+          aria-label="Close"
+        >
           <span aria-hidden="true">&times;</span>
         </button>
       </div>

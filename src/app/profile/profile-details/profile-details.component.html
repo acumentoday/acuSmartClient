@@ -1,15 +1,16 @@
 <div class="container">
   <div class="p-4 boxShadow">
     <div *ngIf="!bookDetailsShow">
-    <div *ngFor="let headings of response">
-      <b>{{ headings.headline }} </b>
+    <div *ngFor="let headings of response" >
+      <h2>{{ headings.headline }} </h2>
       <div class="row">
         <div  *ngFor="let bookDetails of headings.books; let i = index"  class="col-sm-2 col-md-2 col-lg-2 col-xs-2 p-3" (click)="showBookDetails(bookDetails)" style="cursor: pointer;">
-          <div class="card ">
+          <div class="card">
             <div class="card-body">
-              <img src="../../../assets/icons/newbook.jpeg" class="imgSrc"/>
+              <img [src]="bookDetails.image" class="imgSrc"/>
             </div>
           </div>
+        
         </div>
       </div>
     </div>

@@ -46,8 +46,6 @@ export class ProfileDetailsComponent implements OnInit {
             //   console.log(data);
             // });
           }
-
-
         }
         this.headerService.getClickCall().subscribe((res) => {
           console.log(res);
@@ -64,7 +62,7 @@ export class ProfileDetailsComponent implements OnInit {
           }
         });
 
-        console.log(this.response[0].books[0].image);
+        // console.log(this.response[0].books[0].image);
       });
   }
 

@@ -4,8 +4,16 @@ box-sizing: border-box;
 margin: 0;
 padding: 0;
 list-style: none;
-font-family: 'Open Sans', sans-serif;
+font-family: century-gothic, sans-serif;
+font-weight: 100;
+font-style: normal;
+}
 
+
+label {
+    font-size: 18px;
+    font-weight: bold;
+    color : #ae498c
 }
 
 .buttonPad {
@@ -37,10 +45,16 @@ font-family: 'Open Sans', sans-serif;
 
 .authSubmit {
     width: 100%;
+    background-color: #b44c8f !important;
+    border-color: #b44c8f !important;
 }
 
 .boxShadow {
     box-shadow: 5px 10px 18px #888888;
+}
+
+.no_border {
+    border: 0 !important;
 }
 
 

@@ -102,6 +102,7 @@ export class HeaderComponent implements OnInit {
           debounceTime(150),
           distinctUntilChanged()).subscribe((res: SearchResponse) => {
           this.response = res.results;
+          console.log(this.response);
           this.headerService.shareData(res);
           this.headerService.sendClickCall(true);
         }) 
