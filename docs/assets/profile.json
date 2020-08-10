@@ -1,0 +1,74 @@
+{
+    "code": 200,
+    "results": [
+        {
+            "books": [
+                {
+                    "description": "Testing",
+                    "grade": 2,
+                    "id": 12,
+                    "image": "https://acusmart.sgp1.digitaloceanspaces.com/book-covers/Screenshot_2020-06-24-18-35-58-377_com.whatsapp.jpg",
+                    "name": "Test",
+                    "price": 1.0,
+                    "volume": 1
+                }
+            ],
+            "headline": "Your Purchases"
+        },
+        {
+            "books": [
+                {
+                    "description": "Grade3 Volume1",
+                    "grade": 3,
+                    "id": 8,
+                    "image": "https://acusmart.sgp1.digitaloceanspaces.com/book-covers/Grade3 - Vol1 Cover Page.png",
+                    "name": "Grade 3 Volume-1",
+                    "price": 1.0,
+                    "volume": 1
+                },
+                {
+                    "description": "Environmental Studies - EVS for Grade3 - NCERT Text Book",
+                    "grade": 3,
+                    "id": 13,
+                    "image": "https://acusmart.sgp1.digitaloceanspaces.com/book-covers/NCERT EVS Grade-3.png",
+                    "name": "NCERT EVS",
+                    "price": 1.0,
+                    "volume": 1
+                }
+            ],
+            "headline": "Books available in Grade 3"
+        },
+        {
+            "books": [
+                {
+                    "description": "Grade 2, Volume 1",
+                    "grade": 2,
+                    "id": 7,
+                    "image": "https://acusmart.sgp1.digitaloceanspaces.com/book-covers/G2-V1 Cover Page.png",
+                    "name": "Grade2 Volume1",
+                    "price": 1.0,
+                    "volume": 1
+                },
+                {
+                    "description": "Options Strategies",
+                    "grade": 2,
+                    "id": 11,
+                    "image": "https://acusmart.sgp1.digitaloceanspaces.com/book-covers/Screenshot_2020-06-30-20-54-09-046_com.google.android.apps.docs.jpg",
+                    "name": "Bible of Options Strategies",
+                    "price": 1.0,
+                    "volume": 1
+                },
+                {
+                    "description": "Testing",
+                    "grade": 2,
+                    "id": 12,
+                    "image": "https://acusmart.sgp1.digitaloceanspaces.com/book-covers/Screenshot_2020-06-24-18-35-58-377_com.whatsapp.jpg",
+                    "name": "Test",
+                    "price": 1.0,
+                    "volume": 1
+                }
+            ],
+            "headline": "Books available in Grade 2"
+        }
+    ]
+}
