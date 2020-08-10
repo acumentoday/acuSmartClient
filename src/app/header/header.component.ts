@@ -16,6 +16,7 @@ import { isPlatformServer } from '@angular/common';
 import { HeaderService } from './header.service';
 import { SearchResponse, SearchData } from './header.model';
 import { filter, debounceTime, distinctUntilChanged } from 'rxjs/operators';
+
 const configKey = makeStateKey("CONFIG"); 
 declare var webkitSpeechRecognition : any;
 @Component({
