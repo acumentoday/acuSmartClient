@@ -1,0 +1,19 @@
+{
+    "code": 200,
+    "results": [
+        {
+            "books": [
+                {
+                    "description": "Options Strategies",
+                    "grade": 2,
+                    "id": 11,
+                    "image": "https://acusmart.sgp1.digitaloceanspaces.com/book-covers/Screenshot_2020-06-30-20-54-09-046_com.google.android.apps.docs.jpg",
+                    "name": "Bible of Options Strategies",
+                    "price": 1.0,
+                    "volume": 1
+                }
+            ],
+            "headline": "Available in your selected grades"
+        }
+    ]
+}

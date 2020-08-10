@@ -1,0 +1,136 @@
+<div class="container">
+  <div class="p-4 boxShadow">
+    <div class="row">
+      Please fill in your address below. For paid books we will also be shipping
+      physical copies of the books to you via post.
+    </div>
+    <form [formGroup]="addressForm" (ngSubmit)="saveAddress()" *ngIf = "applyButton">
+      <div class="form-group p-2">
+        <input
+          type="text"
+          class="form-control"
+          formControlName="flat"
+          placeholder="Flat/House Number"
+        />
+      </div>
+      <div class="form-group p-2">
+        <input
+          type="text"
+          class="form-control"
+          formControlName="building"
+          placeholder="Building/Society"
+        />
+      </div>
+      <div class="form-group p-2">
+        <input
+          type="text"
+          class="form-control"
+          formControlName="area"
+          placeholder="Area/Locality"
+        />
+      </div>
+      <div class="form-group p-2">
+        <input
+          type="text"
+          class="form-control"
+          formControlName="city"
+          placeholder="City"
+        />
+      </div>
+      <div class="form-group p-2">
+        <input
+          type="text"
+          class="form-control"
+          formControlName="state"
+          placeholder="State"
+        />
+      </div>
+      <div class="form-group p-2">
+        <input
+          type="text"
+          class="form-control"
+          formControlName="pincode"
+          placeholder="Pincode"
+        />
+      </div>
+      <button
+        type="submit"
+        class="btn btn-primary authSubmit"
+        [disabled]="!addressForm.valid"
+      >
+        Apply 
+      </button>
+    
+    </form>
+
+
+
+
+
+
+
+
+    <form [formGroup]="addressForm" (ngSubmit)="coninuePayment()" *ngIf = "continueButton">
+      <div class="form-group p-2">
+        <input
+          type="text"
+          class="form-control"
+          formControlName="flat"
+          placeholder="Flat/House Number"
+        />
+      </div>
+      <div class="form-group p-2">
+        <input
+          type="text"
+          class="form-control"
+          formControlName="building"
+          placeholder="Building/Society"
+        />
+      </div>
+      <div class="form-group p-2">
+        <input
+          type="text"
+          class="form-control"
+          formControlName="area"
+          placeholder="Area/Locality"
+        />
+      </div>
+      <div class="form-group p-2">
+        <input
+          type="text"
+          class="form-control"
+          formControlName="city"
+          placeholder="City"
+        />
+      </div>
+      <div class="form-group p-2">
+        <input
+          type="text"
+          class="form-control"
+          formControlName="state"
+          placeholder="State"
+        />
+      </div>
+      <div class="form-group p-2">
+        <input
+          type="text"
+          class="form-control"
+          formControlName="pincode"
+          placeholder="Pincode"
+        />
+      </div>
+      <button
+      type="submit"
+      class="btn btn-primary authSubmit"
+      [disabled]="!addressForm.valid"
+    >
+      Continue 
+    </button>
+    
+    </form>
+
+
+
+   
+  </div>
+</div>

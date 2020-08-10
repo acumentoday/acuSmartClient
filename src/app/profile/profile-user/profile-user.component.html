@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="p-4 boxShadow">
+    <div class="row">
+      <div class="col-6 p-2">
+        <p class="textColor"><b>Basic Details</b></p>
+      </div>
+      <div class="col-6 p-2 text-right">
+        <button class="btn btn-success"  ><a class="whiteText" routerLink="/profile/view">
+          Edit
+        </a></button>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col p-2">
+        <label for="firstname"><b>First Name</b></label> <br />
+        {{ profileResults?.first_name }}
+      </div>
+      <div class="col p-2">
+        <label for="inputEmail4"><b>Last Name</b></label> <br />
+        {{ profileResults?.last_name }}
+      </div>
+      <div class="col p-2">
+        <label for="inputEmail4"><b>Phone Number</b></label> <br />
+        {{ profileResults?.phone }}
+      </div>
+      <div class="col p-2">
+        <label for="inputEmail4"><b>Grades and Books</b></label> <br />
+       Grade {{ profileResults?.grades[0] }},   Grade {{ profileResults?.grades[1] }}
+      </div>
+        <div class="col-6 p-2">
+          <label for="inputEmail4"><b>Address</b></label> <br />
+         <div>{{ profileAddress }}</div> 
+        </div>
+         <div class="col-6 p-2">
+          <button class="btn btn-success"  ><a class="whiteText" routerLink="/profile/addressEdit">
+            Edit
+          </a>
+        </button>
+      </div>
+     
+    </div>
+  </div>
+</div>

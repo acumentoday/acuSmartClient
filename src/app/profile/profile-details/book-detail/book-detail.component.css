@@ -1,0 +1,13 @@
+.imgSrc {
+    width: 9rem;
+    height: 9rem;
+}
+
+.marBottom {
+    margin-bottom: 10rem;
+}
+
+.purchase_button {
+    padding: 1.5rem;
+    border-radius: 5px;
+}

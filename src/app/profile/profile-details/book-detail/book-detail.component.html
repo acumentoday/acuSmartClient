@@ -1,0 +1,26 @@
+<div class="bookInfo">
+  <div class="row">
+    <div class="col-sm-3 col-md-3 col-lg-3 col-xs-3 p-3">
+      <div class="card">
+        <div class="card-body">
+          <img src="../../../assets/icons/newbook.jpeg" class="imgSrc" />
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3 col-md-3 col-lg-3 col-xs-3 p-3">
+      {{ bookDetailsData.name }}
+    </div>
+
+
+    <div class="col-sm-3 col-md-3 col-lg-3 col-xs-3 p-3"></div>
+    <div class="col-sm-3 col-md-3 col-lg-3 col-xs-3 p-3"></div>
+    <div class="row marBottom">
+        <p> <b>About the book</b></p>
+        <p> {{ bookDetailsData.description }}</p>
+    </div>
+    <div class="row mb-3">
+        <button class="basicColor purchase_button form-control whiteText" (click)="paymentInit()"><b> PURCHASE THIS BOOK (र {{ bookDetailsData.price}})</b> </button>
+    </div>
+  </div>
+</div>
+ 

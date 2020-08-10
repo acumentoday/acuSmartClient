@@ -1,0 +1,46 @@
+<header class="basicColor row p-4">
+  <!-- <h4 class=" whiteText"> {{customLabel}}</h4> -->
+
+  <div class="col-sm-4"></div>
+  <div class="col-sm-4">
+    <div class="form-group has-search" id="voicesearch">
+      <input
+        type="text"
+        #searchKey
+        name="q"
+        class="form-control search_icon"
+        placeholder="Search"
+        autocomplete="off"
+      />
+      <span class="p-2 voice_icon">
+        <img
+          src="../../assets/icons/search.png"
+          width="20"
+          id="search"
+          (click)="search()"
+        />
+      </span>
+      <span class="voice_icon">
+        <img
+          src="../../assets/icons/microphone.png"
+          width="20"
+          (click)="voiceSearch()"
+        />
+      </span>
+    </div>
+  </div>
+
+  <div class="col-sm-4">
+    <div class="text-right">
+      <button class="btn btn-success"><a routerLink="/profile/user" style="color: #fff;">Go to Profile</a></button>
+    </div>
+  </div>
+</header>
+
+<!-- <div class="main ">
+      <div class="form-group has-search">
+      <input type="text" class="form-control search_icon" placeholder="Search">
+    </div>
+  </div> -->
+
+<!--  [formGroup]="searchForm" -->

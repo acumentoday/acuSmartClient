@@ -1,0 +1,128 @@
+<div class="container-fluid">
+  <div class="row authForm basicColor">
+    <div class="col-md-12 col-sm-12 col-xs-12 col-lg-4"></div>
+    <div class="col-md-12 col-sm-12 col-xs-12 col-lg-4">
+      <div class="card mb-2">
+        <div class="card-body">
+          <form [formGroup]="registerForm" (ngSubmit)="registerUser()">
+            <div class="form-group pb-3">
+              <label for="exampleInputEmail1">Email Address</label>
+              <input
+                type="email"
+                class="form-control"
+                id="username"
+                aria-describedby="emailHelp"
+                placeholder="Enter email"
+                formControlName="username"
+              />
+              <span
+                class="text-danger pt-2"
+                *ngIf="
+                  (registerFormControl.username.touched || submitted) &&
+                  registerFormControl.username.errors?.required
+                "
+              >
+                Email is required
+              </span>
+              <span
+                class="text-danger pt-2"
+                *ngIf="
+                  registerFormControl.username.touched &&
+                  registerFormControl.username.errors?.email
+                "
+              >
+                Enter a valid email address
+              </span>
+            </div>
+            <div class="form-group pb-3">
+              <label for="password">Password</label>
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                placeholder="Password"
+                formControlName="password"
+              />
+              <span
+                class="text-danger pt-2"
+                *ngIf="
+                  (registerFormControl.password.touched || submitted) &&
+                  registerFormControl.password.errors?.required
+                "
+              >
+                Password is required
+              </span>
+              <span
+                class="text-danger pt-2"
+                *ngIf="
+                  registerFormControl.password.touched &&
+                  registerForm.controls['password'].hasError('minlength')
+                "
+              >
+                Enter a valid password of 8 characters
+              </span>
+            </div>
+            <div class="form-group pb-3">
+              <label for="confirm_password">Confirm Password</label>
+              <input
+                type="password"
+                class="form-control"
+                id="confirm_password"
+                placeholder="Password"
+                formControlName="confirm_password"
+              />
+              <span
+                class="text-danger pt-2"
+                *ngIf="
+                  (registerFormControl.confirm_password.touched || submitted) &&
+                  registerFormControl.confirm_password.errors?.required
+                "
+              >
+                Password is required
+              </span>
+              <span
+                class="text-danger pt-2"
+                *ngIf="
+                  registerFormControl.confirm_password.touched &&
+                  registerForm.controls['confirm_password'].hasError(
+                    'minlength'
+                  )
+                "
+              >
+                Enter a valid password of 8 characters
+              </span>
+              <span
+                class="text-danger pt-2"
+                *ngIf="
+                  registerFormControl.confirm_password.touched &&
+                  registerFormControl.confirm_password.errors
+                    ?.confirmedvalidator
+                "
+              >
+                Password must match
+              </span>
+            </div>
+            <button
+              type="submit"
+              class="btn btn-primary authSubmit"
+              [disabled]="!registerForm.valid"
+            >
+              Sign Up
+            </button>
+          </form>
+
+          <p class="text-center pt-2">
+            Already Have an Account ?? <a routerLink="/login">Log In</a>
+          </p>
+        </div>
+      </div>
+      <div class="alert alert-warning alert-dismissible fade show" role="alert" *ngIf="errState">
+        {{registerErrorMsg}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    </div>
+    <div class="col-md-12 col-sm-12 col-xs-12 col-lg-4"></div>
+  </div>
+</div>

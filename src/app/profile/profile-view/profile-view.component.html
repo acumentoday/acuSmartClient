@@ -1,0 +1,81 @@
+
+<div class="container-fluid">
+    <div class="row profileForm">
+      <div class="col-md-12 col-sm-12 col-xs-12 col-lg-4"></div>
+      <div class="col-md-12 col-sm-12 col-xs-12 col-lg-4">
+        <div class="card boxShadow">
+          <div class="card-body">
+            <div class="basic_details"> <b>  Basic Details </b></div>
+            <form [formGroup]="profileForm" (ngSubmit)="applyDetails()">
+              <div class="form-group pb-3">
+                <label for="exampleInputEmail1">First Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="firstname"
+                  aria-describedby="emailHelp"
+                  placeholder="First Name"
+                  formControlName="firstname"
+                />
+              
+              </div>
+              <div class="form-group pb-3">
+                <label for="exampleInputPassword1">Last Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="lastname"
+                  placeholder="Last Name"
+                  formControlName="lastname"
+                />
+              
+              </div>
+              <div class="form-group pb-3">
+                <label for="exampleInputPassword1">Phone Number</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="phonenumber"
+                  placeholder="Phone Number"
+                  formControlName="phonenumber"
+                />
+              
+              </div>
+              <div class="form-header pb-2">
+                <div class="basic_details"> <b>  Grades </b></div>
+                <small class="mb-2"> Select two grades to be accessed in the app</small>
+  
+              </div>
+              <div class="form-group pb-3">
+                <select class="form-control" formControlName="grade_one">
+                  <option *ngFor="let grade1 of allGrades1" [ngValue]="grade1.id">
+                   {{ grade1.name }}
+                  </option>
+                </select> 
+              
+              </div>
+              <div class="form-group pb-3">
+                <select  class="form-control" formControlName="grade_two">
+                  <option *ngFor="let grade2 of allGrades2" [ngValue]="grade2.id">
+                   {{ grade2.name }}
+                  </option>
+                </select> 
+              
+              </div>
+              <button
+                type="submit"
+                class="btn btn-primary authSubmit"
+                [disabled]="!profileForm.valid"
+              >
+                Apply Details
+              </button>
+            </form>
+          </div>
+          <button class="btn btn-danger" (click)="logout()">LOGOUT</button>
+        </div>
+      </div>
+      <div class="col-md-12 col-sm-12 col-xs-12 col-lg-4"></div>
+    </div>
+  </div>
+
+
