@@ -6,6 +6,7 @@ import { ProfileDetailsComponent } from './profile-details/profile-details.compo
 import { RandomGuard } from '../_guards/random.guards';
 import { ProfileUserComponent } from './profile-user/profile-user.component';
 import { ProfileEditComponent } from './profile-edit/profile-edit.component';
+import { BookDetailComponent } from './profile-details/book-detail/book-detail.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
       {
         path: 'addressEdit',
         component : ProfileEditComponent
+      },
+      {
+        path: 'purchaseDetails/:id',
+        component: BookDetailComponent
       }
     ],
   },

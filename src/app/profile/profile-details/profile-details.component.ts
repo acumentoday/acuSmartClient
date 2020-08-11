@@ -8,6 +8,7 @@ import {
 import { SearchData, SearchResponse } from 'src/app/header/header.model';
 import { HeaderService } from 'src/app/header/header.service';
 import { ImageService } from 'src/app/_helpers/image.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile-details',
@@ -18,7 +19,8 @@ export class ProfileDetailsComponent implements OnInit {
   constructor(
     private profileService: ProfileService,
     private headerService: HeaderService,
-    private imageService: ImageService
+    private imageService: ImageService,
+    private router : Router
   ) {}
   response: Profile[];
   searchResults: SearchData[];
@@ -35,18 +37,7 @@ export class ProfileDetailsComponent implements OnInit {
       .getProfileDetails()
       .subscribe((result: ProfileDetailsRes) => {
         this.response = result.results;
-        console.log(result.results);
-        for (var i in this.response) {
-          for (var j in this.response[i].books) {
-            // this.books.push(this.response[i].books[j]);
-            // this.getBase64ImageFromUrl(this.response[i].books[j].image)
-            // .then(result => console.log(result))
-            // .catch(err => console.error(err));
-            // this.imageService.getImage(this.response[i].books[j].image).subscribe((data) => {
-            //   console.log(data);
-            // });
-          }
-        }
+      
         this.headerService.getClickCall().subscribe((res) => {
           console.log(res);
           if (res.clicked) {
@@ -69,26 +60,8 @@ export class ProfileDetailsComponent implements OnInit {
   showBookDetails(bookDetails: ProfileDetails) {
     this.bookDetailsShow = !this.bookDetailsShow;
     this.bookDetails = bookDetails;
+      this.router.navigate(['/profile/purchaseDetails', this.bookDetails.id ])
   }
 
-  async getBase64ImageFromUrl(imageUrl) {
-    var res = await fetch(imageUrl);
-    var blob = await res.blob();
-
-    return new Promise((resolve, reject) => {
-      var reader = new FileReader();
-      reader.addEventListener(
-        'load',
-        function () {
-          resolve(reader.result);
-        },
-        false
-      );
-
-      reader.onerror = () => {
-        return reject(this);
-      };
-      reader.readAsDataURL(blob);
-    });
-  }
+ 
 }

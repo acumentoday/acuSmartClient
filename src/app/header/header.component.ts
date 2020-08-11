@@ -16,6 +16,7 @@ import { isPlatformServer } from '@angular/common';
 import { HeaderService } from './header.service';
 import { SearchResponse, SearchData } from './header.model';
 import { filter, debounceTime, distinctUntilChanged } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 const configKey = makeStateKey("CONFIG"); 
 declare var webkitSpeechRecognition : any;
@@ -38,6 +39,7 @@ export class HeaderComponent implements OnInit {
     private injector: Injector,
     private state: TransferState,
     private headerService : HeaderService,
+    private router : Router,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {
   
@@ -95,7 +97,6 @@ export class HeaderComponent implements OnInit {
         } else {
           searchTerm =  searchValue ;
         }
-        console.log(searchTerm);
 
         if(searchTerm != '') {
         this.headerService.searchBook(searchTerm) .pipe(
@@ -111,6 +112,7 @@ export class HeaderComponent implements OnInit {
         else {
               this.headerService.sendClickCall(false);
         }
+        this.router.navigate(['/profile/details']);
     }
 
 // ngOnInit() {}

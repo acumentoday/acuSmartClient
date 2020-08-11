@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ProfileDetails } from '../profile-details.model';
 import { PaymentService } from 'src/app/payment/payment.service';
 import { PaymentInitRes } from 'src/app/payment/payment.model';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { ProfileService } from '../../profile.service';
 import { ProfileAddress } from '../../profile-user/profile-user.model';
 
@@ -13,11 +13,20 @@ import { ProfileAddress } from '../../profile-user/profile-user.model';
 })
 export class BookDetailComponent implements OnInit {
 
-  @Input() bookDetailsData : ProfileDetails
+bookDetailsData : ProfileDetails
+id: number;
   addressRes : ProfileAddress;
-  constructor(private paymentService : PaymentService, private router : Router, private profileService : ProfileService) { }
+  constructor(private paymentService : PaymentService, private router : Router, private actRoute : ActivatedRoute, private profileService : ProfileService) { }
 
   ngOnInit(): void {
+this.actRoute.params.subscribe(params => {
+      this.id = +params['id']; // (+) converts string 'id' to a number
+    this.profileService.getBook(this.id).subscribe((res : any) => {
+      this.bookDetailsData = res.book;
+      console.log(this.bookDetailsData);
+    })
+      // In a real app: dispatch action to load the details here.
+   });
   }
 
 
